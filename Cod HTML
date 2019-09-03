@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(128, 94, 43); font-family: Arial, Helvetica, sans-serif">
+
+    <div id="info" style="border: rgb(0, 0, 0) 1px solid; width: 300px;height: 300px; position: absolute; top: 25%;left: 15%;
+     padding: 30px; background-color: rgba(243, 215, 156, 0.521)">
+    <center>
+
+        <b>Grãos Produzidos
+        <input id="producao" placeholder="Tonelada Anual" style="width:200px;height: 30px; "> <br><br>
+
+        Valor do Grãos</b>
+        <input id="valor" placeholder="Por tonelada" style="width:200px;height: 30px; "> <br><br>
+
+        <button onclick="calcular()" style="height:30px ;">CALCULAR</button>
+
+    </center></div>
+
+    <div id="info" style="border: rgb(0, 0, 0) 1px solid; width: 300px; height: 300px; position: absolute; top: 25%;left: 55%;
+    padding: 30px; background-color: rgba(243, 215, 156, 0.521)">
+     <center>
+
+         <b>Prejuizo financeiro mensal: <br>
+        <span id="mostrar_prejuizo" style="font-size: 30px"></span> <br><br><br>
+
+        Mas com o nosso produto sua economia será de até: <br>
+        <span id="mostrar_economia" style="font-size: 30px"></span>
+
+
+
+
+     </center>
+     </div>
+
+    
+</body>
+</html>
+
+<script> 
+    function calcular(){
+
+        var mensalTotal = producao.value*valor.value/12;
+        var prejuizo = mensalTotal * 0.55;
+        var solucao = 500;
+        var economia = prejuizo - solucao;
+
+        mostrar_prejuizo.innerHTML = prejuizo.toFixed(2);
+        mostrar_economia.innerHTML = economia.toFixed(2);
+    }
+
+
+
+</script>
